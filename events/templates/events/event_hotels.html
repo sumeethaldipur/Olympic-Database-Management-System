@@ -1,0 +1,23 @@
+{% extends "base_menu.html" %}
+{% block content %}
+<h1>Hotels</h1>
+<div style="width: 80%;
+    border: 1px solid black;
+    background-color: lightcyan;
+    font-family: Helvetica, sans-serif;">
+        <div style="margin: 5%;">
+
+            <h4 id='neatdata'></h4>
+        </div>
+    </div>
+
+<script>
+    var data = JSON.parse("{{data|escapejs}}");
+    //var dataNode = document.getElementById('alldata');
+    //dataNode.innerHTML+="{{data|escapejs}}";
+    var dataNode = document.getElementById('neatdata');
+    for(var x in data){
+        dataNode.innerHTML+=' -- '+'<h3>'+data[x]['name']+'</h3>'+'<br>'+data[x]['latitude']+'<br>'+data[x]['longitude']+'<br><br>';
+    }
+</script>
+{% endblock %}

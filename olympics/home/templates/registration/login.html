@@ -1,0 +1,20 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+{% load static %}
+<div style="background-image: url(../{{ STATIC_URL }}/images/stadium.JPG);">
+<!-- image -->
+</div>
+{% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+{% load crispy_forms_tags %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+{{ form|crispy }}
+
+<input type="submit" class="btn btn-primary" value="Login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+{% endblock %}

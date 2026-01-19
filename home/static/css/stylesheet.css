@@ -1,0 +1,17 @@
+#bg{
+    background-size: 1500px 650px !important;
+    background-repeat: no-repeat !important;
+    background-position: top !important;
+    background-attachment: fixed !important;
+}
+#wel{
+  font-style: italic;
+    color: gray;
+    padding-left: 35%;
+    padding-top: 20%;
+}
+#every{
+  background-color: #7ee8fa;
+background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+
+}

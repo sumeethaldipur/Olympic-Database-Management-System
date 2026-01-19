@@ -1,0 +1,28 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+  <h1>Athlete List</h1>
+  {% if athlete_list %}
+  <ul>
+    {% for athlete in athlete_list %}
+      <li>
+          <h4><b>{{ athlete.first_name }}
+          {{ athlete.last_name }}</b></h4>
+          <p>
+          {{ athlete.gender }} || {{ athlete.age }}
+          </p>
+          <p>
+          {{ athlete.country }}
+          </p>
+
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no athletes in this event.</p>
+  {% endif %}
+
+  <p>
+    <a href="{% url 'events:all' %}">Back to Event List</a>
+  </p>
+{% endblock %}
